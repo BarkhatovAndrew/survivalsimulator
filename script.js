@@ -50,6 +50,7 @@ function startGame() {
   startGameBtn.style.display = "none";
   btnArea.style.display = "unset";
   dayCounter.style.display = "unset";
+  dayCounter.innerHTML = `<p>Day ${dayCount}</p>`;
 
   healthBar.innerHTML = `<span style="color: red">Health</span>: ${health}`;
   moneyBar.innerHTML = `<span style="color: #04e600">Money</span>: ${money}`;
@@ -86,7 +87,7 @@ function isMaximumPoints() {
 function loseCheck() {
   if (health <= 0 || money <= 0 || fatigue <= 0) {
     game = false;
-    alert("you lose!");
+    btnArea.style.display = "none";
   }
 }
 
@@ -104,6 +105,7 @@ function refreshStatusBars() {
   healthBar.innerHTML = `<span style="color: red">Health</span>: ${health}`;
   moneyBar.innerHTML = `<span style="color: #04e600">Money</span>: ${money}`;
   fatigueBar.innerHTML = `<span style="color: blue">Fatigue</span>: ${fatigue}`;
+  dayCounter.innerHTML = `<p>Day ${dayCount}</p>`;
 }
 
 // !!! Turns
@@ -132,11 +134,11 @@ function eating() {
 // Regular things
 
 function regularThings() {
+  dayCount += 1;
   isMaximumPoints();
   refreshStatusBars();
   loseCheck();
   winCheck();
-  dayCount += 1;
 }
 
 // Turn Buttons
