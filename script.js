@@ -89,7 +89,7 @@ function loseCheck() {
     statusArea.style.display = "none";
     dayCounter.style.display = "none";
 
-    gameRules.innerHTML = `<p>You <span style="color: yellow">win</span>!</p><p>You were able to survive for <span style="color: green">${dayCount}</span> days</p><p>During this time you have earned <span style="color: green">${totalMoney}$</span>. Not bad.</p>`;
+    gameRules.innerHTML = `<p>You <span style="color: yellow">lose</span>.</p><p>You were able to survive for <span style="color: green">${dayCount}</span> days</p><p>During this time you have earned <span style="color: green">${totalMoney}$</span>. Not bad.</p>`;
   }
 }
 
@@ -100,6 +100,8 @@ function winCheck() {
     btnArea.style.display = "none";
     statusArea.style.display = "none";
     dayCounter.style.display = "none";
+
+    gameRules.innerHTML = `<p>You <span style="color: yellow">win</span>!</p><p>You were able to survive for <span style="color: green">${dayCount}</span> days</p><p>During this time you have earned <span style="color: green">${totalMoney}$</span>. Not bad.</p>`;
   }
 }
 
@@ -110,6 +112,8 @@ function refreshStatusBars() {
   moneyBar.innerHTML = `<span style="color: #04e600">Money</span>: ${money}`;
   fatigueBar.innerHTML = `<span style="color: blue">Fatigue</span>: ${fatigue}`;
   dayCounter.innerHTML = `<p>Day ${dayCount}</p>`;
+
+  gameRules.innerHTML = `<p>Choose what you want to do: beg, sleep, eat, shop or status</p>`;
 }
 
 // !!! Turns
@@ -119,6 +123,16 @@ function begging() {
   fatigue -= 5;
   money += 10;
   totalMoney += 10;
+
+  let randomEvent = Math.floor(Math.random() * 11);
+  if (randomEvent === 1) {
+    let extraMoney = Math.floor(Math.random() * 30) + 20;
+    health -= 5;
+    fatigue -= 5;
+    totalMoney += extraMoney;
+    money += extraMoney;
+    gameRules.innerHTML += `<p>Wow! It's a nice day today! You earned an extra ${extraMoney}$</p>`;
+  }
   regularThings();
 }
 
