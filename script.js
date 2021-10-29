@@ -63,11 +63,10 @@ function startGame() {
 
 // Characteristics
 
-let game = true;
-
 let health = 100;
 let money = 100;
 let fatigue = 100;
+let totalMoney = 0;
 
 let dayCount = 0;
 
@@ -86,8 +85,11 @@ function isMaximumPoints() {
 
 function loseCheck() {
   if (health <= 0 || money <= 0 || fatigue <= 0) {
-    game = false;
     btnArea.style.display = "none";
+    statusArea.style.display = "none";
+    dayCounter.style.display = "none";
+
+    gameRules.innerHTML = `<p>You <span style="color: yellow">win</span>!</p><p>You were able to survive for <span style="color: green">${dayCount}</span> days</p><p>During this time you have earned <span style="color: green">${totalMoney}$</span>. Not bad.</p>`;
   }
 }
 
@@ -95,7 +97,9 @@ function loseCheck() {
 
 function winCheck() {
   if (money >= 1000) {
-    alert("you win!");
+    btnArea.style.display = "none";
+    statusArea.style.display = "none";
+    dayCounter.style.display = "none";
   }
 }
 
@@ -114,6 +118,7 @@ function begging() {
   health -= 5;
   fatigue -= 5;
   money += 10;
+  totalMoney += 10;
   regularThings();
 }
 
