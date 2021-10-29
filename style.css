@@ -12,8 +12,38 @@ h1 {
   color: aliceblue;
 }
 
-.wrapper {
+p {
+  color: white;
+  font-size: 30px;
+  margin: 10px;
+}
 
+button {
+  font-size: 30px;
+  padding: 10px 20px;
+  border: solid 4px;
+}
+
+button:hover {
+  border: #04e600 solid 4px;
+}
+
+input {
+  line-height: 30px;
+  border: solid 4px;
+  width: 400px;
+  font-size: 30px;
+}
+
+input:focus {
+  outline: 4px #04e600 solid;
+}
+
+.gamer-name {
+  margin: 30px 0;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,9 +53,15 @@ h1 {
 
 .container {
   margin: 50px 0 150px;
+  padding: 0 25px;
   width: 800px;
   min-height: 600px;
   border: 1px solid black;
 
   background: #000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
