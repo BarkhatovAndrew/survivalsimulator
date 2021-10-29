@@ -10,18 +10,20 @@ body {
 h1 {
   font-size: 60px;
   color: aliceblue;
+  margin-top: 50px;
 }
 
 p {
   color: white;
   font-size: 30px;
-  margin: 10px;
+  margin: 20px 100px;
 }
 
 button {
   font-size: 30px;
   padding: 10px 20px;
   border: solid 4px;
+  margin-top: 40px;
 }
 
 button:hover {
@@ -52,8 +54,7 @@ input:focus {
 }
 
 .container {
-  margin: 50px 0 150px;
-  padding: 0 25px;
+  margin: 40px 0 150px;
   width: 800px;
   min-height: 600px;
   border: 1px solid black;
@@ -64,4 +65,26 @@ input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+}
+
+.name {
+  color: #04e600;
+}
+
+.btn-area {
+  display: none;
+}
+
+.status-area {
+  display: flex;
+  margin: 0 100px;
+}
+
+.day-counter-area {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  display: none;
 }
