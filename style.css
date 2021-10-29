@@ -79,7 +79,12 @@ input:focus {
 
 .status-area {
   display: flex;
+  justify-content: center;
   margin: 0 100px;
+}
+
+.status-area p {
+  margin: 25px;
 }
 
 .day-counter-area {
