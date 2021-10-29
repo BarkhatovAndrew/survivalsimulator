@@ -37,7 +37,7 @@ function secondStep() {
 
 function thirdStep() {
   startGameBtn.innerHTML = "Start";
-  gameRules.innerHTML = `<p>You can also write "Status" to find out your characteristics.</p>
+  gameRules.innerHTML = `<p>Your goal is to earn 1000 $</p>
 <p>Now you can start the game. Press Start to start :)</p>`;
 
   startGameBtn.addEventListener("click", startGame);
