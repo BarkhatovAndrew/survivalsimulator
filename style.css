@@ -27,7 +27,7 @@ button {
 }
 
 button:hover {
-  border: #04e600 solid 4px;
+  outline: 4px #04e600 solid;
 }
 
 input {
