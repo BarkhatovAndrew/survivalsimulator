@@ -19,12 +19,16 @@ startGameBtn.addEventListener('click', firstStep);
 
 function firstStep() {
   const name = nameInput.value;
-  startGameBtn.innerHTML = 'Next';
+  if (name === '') {
+    gameRules.innerHTML = `<p>Hello! This is simple homeless simulator</p><p>Just <span class="red">enter your name</span> to start the game</p>`;
+  } else {
+    startGameBtn.innerHTML = 'Next';
 
-  gameRules.innerHTML = `<p>Hello, <span class='green'>${name}</span>!</p><p>You have 3 indicators: <span style="color: red">health</span>, <span class='green'>money</span> and <span style="color: blue">fatigue</span>.</p><p>Fatigue and health have a scale from 0 to 100. The amount of money is unlimited.</p><p>If one of the indicators reaches 0, you will lose.</p>`;
-  nameInput.style.display = 'none';
+    gameRules.innerHTML = `<p>Hello, <span class='green'>${name}</span>!</p><p>You have 3 indicators: <span style="color: red">health</span>, <span class='green'>money</span> and <span style="color: blue">fatigue</span>.</p><p>Fatigue and health have a scale from 0 to 100. The amount of money is unlimited.</p><p>If one of the indicators reaches 0, you will lose.</p>`;
+    nameInput.style.display = 'none';
 
-  startGameBtn.addEventListener('click', secondStep);
+    startGameBtn.addEventListener('click', secondStep);
+  }
 }
 
 function secondStep() {

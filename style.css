@@ -105,3 +105,45 @@ input:focus {
 .blue {
   color: blue;
 }
+
+@media (max-width: 850px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    margin: 20px 20px 0 20px;
+    text-align: center;
+  }
+
+  p {
+    margin: 0 20px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .gamer-name {
+    width: 80%;
+  }
+
+  .status-area {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .status-area p {
+    margin: 10px;
+  }
+
+  .day-counter-area {
+    bottom: 20px;
+  }
+
+  .rules {
+    margin-bottom: 20px;
+  }
+}
