@@ -1,5 +1,5 @@
 html {
-  font-family: "VT323", monospace;
+  font-family: 'VT323', monospace;
 }
 
 body {
@@ -92,4 +92,16 @@ input:focus {
   bottom: 10px;
   left: 0;
   display: none;
+}
+
+.green {
+  color: #04e600;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
 }
