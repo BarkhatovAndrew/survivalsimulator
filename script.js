@@ -11,6 +11,8 @@ let healthBar = document.createElement("p");
 let moneyBar = document.createElement("p");
 let fatigueBar = document.createElement("p");
 
+let waitOneTurn = 0;
+
 nameInput.innerHTML = "";
 
 startGameBtn.addEventListener("click", firstStep);
@@ -113,7 +115,17 @@ function refreshStatusBars() {
   fatigueBar.innerHTML = `<span style="color: blue">Fatigue</span>: ${fatigue}`;
   dayCounter.innerHTML = `<p>Day ${dayCount}</p>`;
 
-  gameRules.innerHTML = `<p>Choose what you want to do: beg, sleep, eat, shop or status</p>`;
+  if (
+    gameRules.innerHTML.includes(
+      `<p>Wow! It's a nice day today!`
+    ) &&
+    waitOneTurn === 0
+  ) {
+    waitOneTurn += 1;
+  } else if (waitOneTurn === 1) {
+    gameRules.innerHTML = `<p>Choose what you want to do: beg, sleep, eat, shop or status</p>`;
+    waitOneTurn = 0;
+  }
 }
 
 // !!! Turns
