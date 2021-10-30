@@ -26,6 +26,13 @@ button {
   margin-top: 40px;
 }
 
+button:focus,
+button:active {
+  outline: none;
+  border: none;
+  color: black;
+}
+
 button:hover {
   outline: 4px #04e600 solid;
 }
