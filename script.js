@@ -158,7 +158,7 @@ function sleeping() {
       money -= 15;
       break;
     case 2:
-      gameRules.innerHTML += `<p>Oh shit! You were attacked by teenagers while you were sleeping. <span class='red'>-15</span> health</p>`;
+      gameRules.innerHTML += `<p>Oh shit! You were attacked by teenagers while you were sleeping. (<span class='red'>-15</span> health)</p>`;
       health -= 15;
       break;
     case 3:
@@ -174,6 +174,21 @@ function eating() {
   health += 15;
   money -= 15;
   fatigue -= 5;
+
+  let randomChance = Math.floor(Math.random() * 16);
+  switch (randomChance) {
+    case 1:
+      gameRules.innerHTML += `<p>Oh shit! While you were eating, you were <span class='green'>robbed</span> by the schoolchildren. (<span class='green'>-10</span>$)</p>`;
+      money -= 10;
+      break;
+    case 2:
+      gameRules.innerHTML += `<p>Oh shit! Today food is <span class='green'>more expensive</span> than usual (<span class='green'>-5</span> $)</p>`;
+      money -= 5;
+      break;
+    case 3:
+      gameRules.innerHTML += `<p>Oh shit! Your food was taken away. Are you <span class='red'>hungry</span>.</p>`;
+      break;
+  }
 
   regularThings();
 }
