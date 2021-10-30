@@ -116,9 +116,7 @@ function refreshStatusBars() {
   dayCounter.innerHTML = `<p>Day ${dayCount}</p>`;
 
   if (
-    gameRules.innerHTML.includes(
-      `<p>Wow! It's a nice day today!`
-    ) &&
+    gameRules.innerHTML.includes(`<p>Wow! It's a nice day today!`) &&
     waitOneTurn === 0
   ) {
     waitOneTurn += 1;
@@ -143,7 +141,7 @@ function begging() {
     fatigue -= 5;
     totalMoney += extraMoney;
     money += extraMoney;
-    gameRules.innerHTML += `<p>Wow! It's a nice day today! You earned an extra ${extraMoney}$</p>`;
+    gameRules.innerHTML += `<p>Wow! It's a nice day today! You earned an extra <span style="color: #04e600">${extraMoney}</span>$</p>`;
   }
   regularThings();
 }
