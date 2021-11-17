@@ -1,2 +1,3 @@
 # survival simulator
-just training DOM and SCSS
+
+A simple game I made to practice with a DOM and some CSS.
